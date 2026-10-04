@@ -1,4 +1,4 @@
-vi primos, minprime;
+vi primos, minprime; //2e5 ~18.000 | 1e6 ~79.000
 void criba(int n){
 	minprime.resize(n+1);
 	forn(i, n+1) minprime[i] = i;
@@ -9,4 +9,18 @@ void criba(int n){
 			if(minprime[p]==p) minprime[p] = i;
 		}
 	}
+}
+
+vector<pii> factorize(int x){
+    vector<pii> fac;
+    while(x > 1){
+        int p = minprime[x];
+        int cant = 0;
+        while(x % p == 0) {
+            cant++;
+            x /= p;
+        }
+        fac.pb({p, cant});
+    }
+    return fac;
 }
