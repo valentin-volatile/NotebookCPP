@@ -1,11 +1,10 @@
-// O(V+E)
-// usage: dfs(raiz, -1, grafo);
+
+// O(V+E) | usage: dfs(raiz, -1, grafo);
 // en es_art true si el nodo es punto de articulacion
 // si no me aseguran que sea conexo, tirar dfs en todos los nodos no vistos
 
 vi tin, low;
 vb visto, es_art;
-
 
 int timer = 0;
 void dfs(int cur, int prev, vector<vi> &grafo){
